@@ -12,7 +12,7 @@ $("#search-form").submit(function(e) {
         },
         url: "https://api.pexels.com/v1/search?query=" + query + "&per_page=100&page=1",
         success: function(data) {
-            console.log(data);
+            $("#photos-container").empty();
 
             data.photos.forEach(function(photo) {
                 let photoDiv = `
