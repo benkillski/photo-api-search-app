@@ -10,7 +10,7 @@ $("#search-form").submit(function(e) {
         beforeSend: function(xhr) {
             xhr.setRequestHeader("Authorization", apiKey);
         },
-        url: "https://api.pexels.com/v1/search?query=" + query + "&per_page=15&page=1",
+        url: "https://api.pexels.com/v1/search?query=" + query + "&per_page=100&page=1",
         success: function(data) {
             console.log(data);
 
