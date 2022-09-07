@@ -13,6 +13,16 @@ $("#search-form").submit(function(e) {
         url: "https://api.pexels.com/v1/search?query=" + query + "&per_page=15&page=1",
         success: function(data) {
             console.log(data);
+
+            data.photos.forEach(function(photo) {
+                let photoDiv = `
+                    <div class="photo-div">
+                        <img class="photo" src="${photo.src.large}">
+                    </div>
+                `;
+
+                $("#photos-container").append(photoDiv);
+            })
         },
         error: function(error)
         {
